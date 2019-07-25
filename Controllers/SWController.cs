@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using RestEase;
 using StarWars.Models;
 using StarWars.Proxies;
@@ -11,24 +12,44 @@ using StarWars.Proxies;
 
 namespace StarWars.Controllers
 {
+
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class SWController : Controller
     {
+        private readonly IOptionsSnapshot<CharacterAPIOptions> characterOptions;
+
+        public SWController(IOptionsSnapshot<CharacterAPIOptions> characterOptions)
+        {
+            this.characterOptions = characterOptions;
+        }
+
+
         // GET api/sw/5
         [HttpGet("{id}")]
         public ActionResult<Character> Get(int id)
         {
-            // Create an implementation of that interface
-            // We'll pass in the base URL for the API
+       
 
 
-            ISWApi api = RestClient.For<ISWApi>("https://swapi.co/api/");
 
-            // Now we can simply call methods on it
-            // Normally you'd await the request, but this is a console app
-            Character character = api.GetCharacterAsync($"{id}").Result;
-            return character;
+            Character result = null;
+
+            try
+            {
+                string baseUrl = characterOptions.Value.BaseUrl;
+                ISWApi api = RestClient.For<ISWApi>(baseUrl);
+                result = api.GetCharacterAsync($"{id}").Result;
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return Ok(result);
+
         }
     }
 }
