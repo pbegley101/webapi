@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -41,11 +42,44 @@ namespace StarWars
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddHealthChecks()
+    
+           .AddAsyncCheck("Http", async () =>
+           {
+               using (HttpClient client = new HttpClient())
+               {
+                   try
+                   {
+                       //var response = await client.GetAsync("http://localhost:5000");
+                       var response = await client.GetAsync(Configuration["CharacterAPIOptions:BaseUrl"]);
+
+                       if (!response.IsSuccessStatusCode)
+                       {
+                           throw new Exception("Url not responding with 200 OK");
+                       }
+                   }
+                   catch (Exception)
+                   {
+                       return await Task.FromResult(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Unhealthy());
+                   }
+               }
+               return await Task.FromResult(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
+           });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
 
             // Options for particular external services
             services.Configure<CharacterAPIOptions>(Configuration.GetSection("CharacterAPIOptions"));
+
+
         }
+
+   
+
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -59,7 +93,7 @@ namespace StarWars
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseHealthChecks("/healthcheck");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
