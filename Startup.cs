@@ -73,10 +73,12 @@ namespace StarWars
             // Options for particular external services
             services.Configure<CharacterAPIOptions>(Configuration.GetSection("CharacterAPIOptions"));
 
+            services.AddSwaggerDocument();
 
         }
 
    
+
 
 
 
@@ -93,6 +95,11 @@ namespace StarWars
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+
             app.UseHealthChecks("/healthcheck");
             app.UseHttpsRedirection();
             app.UseMvc();
