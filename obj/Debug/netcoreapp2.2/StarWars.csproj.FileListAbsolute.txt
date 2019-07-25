@@ -1,0 +1,14 @@
+/Users/paulbegley/interview/StarWars/bin/Debug/netcoreapp2.2/StarWars.deps.json
+/Users/paulbegley/interview/StarWars/bin/Debug/netcoreapp2.2/StarWars.runtimeconfig.json
+/Users/paulbegley/interview/StarWars/bin/Debug/netcoreapp2.2/StarWars.runtimeconfig.dev.json
+/Users/paulbegley/interview/StarWars/bin/Debug/netcoreapp2.2/StarWars.dll
+/Users/paulbegley/interview/StarWars/bin/Debug/netcoreapp2.2/StarWars.pdb
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.csprojAssemblyReference.cache
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.csproj.CoreCompileInputs.cache
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.RazorAssemblyInfo.cache
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.RazorAssemblyInfo.cs
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.AssemblyInfoInputs.cache
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.AssemblyInfo.cs
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.RazorTargetAssemblyInfo.cache
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.dll
+/Users/paulbegley/interview/StarWars/obj/Debug/netcoreapp2.2/StarWars.pdb
