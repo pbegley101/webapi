@@ -29,6 +29,8 @@ namespace StarWars.Controllers
 
         // GET api/sw/5
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(string), 200)]
+        [ProducesResponseType(400)]
         public ActionResult<Character> Get(int id)
         {
        

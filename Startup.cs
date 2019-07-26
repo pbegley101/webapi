@@ -73,7 +73,27 @@ namespace StarWars
             // Options for particular external services
             services.Configure<CharacterAPIOptions>(Configuration.GetSection("CharacterAPIOptions"));
 
-            services.AddSwaggerDocument();
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "StarWars Character API";
+                    document.Info.Description = "Starwars Character API enriched with Asp.Net Core features";
+                    document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Paul Begley",
+                        Email = string.Empty,
+                        Url = ""
+                    };
+                    document.Info.License = new NSwag.OpenApiLicense
+                    {
+                        Name = "",
+                        Url = ""
+                    };
+                };
+            });
 
         }
 
@@ -89,6 +109,7 @@ namespace StarWars
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -102,7 +123,7 @@ namespace StarWars
 
             app.UseHealthChecks("/healthcheck");
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
