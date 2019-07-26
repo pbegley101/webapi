@@ -1,17 +1,11 @@
 ﻿<Properties StartupConfiguration="{0F724191-FD66-462D-9876-B02811FC06F5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
     <Files>
-      <File FileName="Controllers/ValuesController.cs" Line="25" Column="10" />
-      <File FileName="Controllers/SWController.cs" Line="33" Column="36" />
+      <File FileName="Startup.cs" Line="125" Column="43" />
+      <File FileName="Controllers/SWController.cs" Line="64" Column="29" />
       <File FileName="Models/Character.cs" Line="15" Column="34" />
-      <File FileName="Proxies/ICharacterClient.cs" Line="23" Column="63" />
-      <File FileName="CharacterAPIOptions.cs" Line="11" Column="1" />
+      <File FileName="Proxies/ICharacterClient.cs" Line="17" Column="28" />
       <File FileName="appsettings.json" Line="4" Column="5" />
-      <File FileName="appsettings.Development.json" Line="4" Column="5" />
-      <File FileName="Startup.cs" Line="93" Column="32" />
-      <File FileName="Program.cs" Line="23" Column="6" />
-      <File FileName="../../.nuget/packages/nswag.codegeneration.actionframework/1.0.0/readme.txt" Line="1" Column="1" />
-      <File FileName="Controllers/HomeController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,13 +13,15 @@
           <Node name="StarWars" expanded="True">
             <Node name="StarWars" expanded="True">
               <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+                <Node name="PackageDependencies" expanded="True">
+                  <Node name="Microsoft.Extensions.Http" expanded="True" />
+                </Node>
+                <Node name="SdkDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Proxies" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

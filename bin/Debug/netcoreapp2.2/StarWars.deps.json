@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "55a80e5fc4d19d34bb5061e44c2cc57b97c1724a"
+    "signature": "a17ac1c11a2f2f2775c020b7143a72da7aad7e11"
   },
   "compilationOptions": {
     "defines": [
@@ -26,9 +26,12 @@
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
+          "Microsoft.Extensions.Http": "2.2.0",
+          "Microsoft.Extensions.Http.Polly": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "NSwag.AspNetCore": "13.0.4",
           "Newtonsoft.Json": "12.0.2",
+          "Polly": "7.1.0",
           "RestEase": "1.4.9"
         },
         "runtime": {
@@ -39,6 +42,22 @@
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/0.3.0-preview6.19307.2": {},
+      "Microsoft.Extensions.Http.Polly/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Http": "2.2.0",
+          "Polly": "7.1.0",
+          "Polly.Extensions.Http": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.Polly.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.Polly.dll": {}
+        }
+      },
       "Namotion.Reflection/1.0.5": {
         "dependencies": {
           "Microsoft.CSharp": "4.5.0"
@@ -161,6 +180,31 @@
         },
         "compile": {
           "lib/netstandard2.0/NSwag.Generation.AspNetCore.dll": {}
+        }
+      },
+      "Polly/7.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {}
+        }
+      },
+      "Polly.Extensions.Http/2.0.1": {
+        "dependencies": {
+          "Polly": "7.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.Extensions.Http.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Polly.Extensions.Http.dll": {}
         }
       },
       "RestEase/1.4.9": {
@@ -3381,6 +3425,13 @@
       "path": "microsoft.extensions.apidescription.server/0.3.0-preview6.19307.2",
       "hashPath": "microsoft.extensions.apidescription.server.0.3.0-preview6.19307.2.nupkg.sha512"
     },
+    "Microsoft.Extensions.Http.Polly/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HIk+xQ0wQHPHaOGa/mm1NMx4aDO5IosO/C7SVmbwFb/XQgRHnGOnA8xNcUqzwerWHhw0vVzuIRJuLrKlipDsyA==",
+      "path": "microsoft.extensions.http.polly/2.2.0",
+      "hashPath": "microsoft.extensions.http.polly.2.2.0.nupkg.sha512"
+    },
     "Namotion.Reflection/1.0.5": {
       "type": "package",
       "serviceable": true,
@@ -3436,6 +3487,20 @@
       "sha512": "sha512-l9BuwAZMzyPh+MD0FVqjLP9mlWWAT92eWsD3himBzuc/xUc8PISag0vTJk4Mh50QzPTaBr09h38l1t5Jx7BgiQ==",
       "path": "nswag.generation.aspnetcore/13.0.4",
       "hashPath": "nswag.generation.aspnetcore.13.0.4.nupkg.sha512"
+    },
+    "Polly/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mpQsvlEn4ipgICh5CGyVLPV93RFVzOrBG7wPZfzY8gExh7XgWQn0GCDY9nudbUEJ12UiGPP9i4+CohghBvzhmg==",
+      "path": "polly/7.1.0",
+      "hashPath": "polly.7.1.0.nupkg.sha512"
+    },
+    "Polly.Extensions.Http/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9NPDm98bmtlzLHnMDJ4YHno88yZmBOzvks34coP73/1GJzabSUi217xISa4z+b7YO5TncZMQVM4O5ThlZwg8mQ==",
+      "path": "polly.extensions.http/2.0.1",
+      "hashPath": "polly.extensions.http.2.0.1.nupkg.sha512"
     },
     "RestEase/1.4.9": {
       "type": "package",

@@ -12,11 +12,19 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Polly;
+using Polly.Registry;
+using StarWars.Models;
+using Microsoft.Extensions.Http;
+using RestEase;
+using StarWars.Proxies;
 
 namespace StarWars
 {
     public class Startup
     {
+        private IPolicyRegistry<string> policyRegistry;
+
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -70,6 +78,12 @@ namespace StarWars
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
+
+
+
+
+
+
             // Options for particular external services
             services.Configure<CharacterAPIOptions>(Configuration.GetSection("CharacterAPIOptions"));
 
@@ -95,12 +109,30 @@ namespace StarWars
                 };
             });
 
+            ConfigurePolicies(services);
+            ConfigureHttpClients(services);
+
         }
 
-   
+        private void ConfigurePolicies(IServiceCollection services)
+        {
+            policyRegistry = services.AddPolicyRegistry();
+            var timeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromMilliseconds(1500));
+            policyRegistry.Add("timeout", timeoutPolicy);
+        }
 
-
-
+        private void ConfigureHttpClients(IServiceCollection services)
+        {
+            services.AddHttpClient("ISWApi", options =>
+            {
+                options.BaseAddress = new Uri(Configuration["CharacterAPIOptions:BaseUrl"]);
+                options.Timeout = TimeSpan.FromMilliseconds(15000);
+                options.DefaultRequestHeaders.Add("ClientFactory", "Check");
+            })
+            .AddPolicyHandlerFromRegistry("timeout")
+            .AddTransientHttpErrorPolicy(p => p.RetryAsync(3))
+            .AddTypedClient(client => RestClient.For<ISWApi>(client));
+        }
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
