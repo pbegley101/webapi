@@ -1,0 +1,28 @@
+2019-07-27 13:28:52.922 +02:00 [INF] User profile is available. Using '/Users/paulbegley/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2019-07-27 13:29:28.993 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/sw/1  
+2019-07-27 13:29:29.090 +02:00 [INF] Executing endpoint 'StarWars.Controllers.SWController.Get (StarWars)'
+2019-07-27 13:29:29.134 +02:00 [INF] Route matched with {action = "Get", controller = "SW"}. Executing action StarWars.Controllers.SWController.Get (StarWars)
+2019-07-27 13:29:29.301 +02:00 [INF] Executing action method StarWars.Controllers.SWController.Get (StarWars) with arguments (["1"]) - Validation state: "Valid"
+2019-07-27 13:29:30.642 +02:00 [INF] Executed action method StarWars.Controllers.SWController.Get (StarWars), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1337.5337ms.
+2019-07-27 13:29:30.682 +02:00 [INF] Executing ObjectResult, writing value of type 'StarWars.Models.Character'.
+2019-07-27 13:29:30.706 +02:00 [INF] Executed action StarWars.Controllers.SWController.Get (StarWars) in 1564.5434ms
+2019-07-27 13:29:30.706 +02:00 [INF] Executed endpoint 'StarWars.Controllers.SWController.Get (StarWars)'
+2019-07-27 13:29:30.715 +02:00 [INF] Request finished in 1724.248ms 200 application/xml; charset=utf-8
+2019-07-27 13:29:36.053 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/sw/2  
+2019-07-27 13:29:36.058 +02:00 [INF] Executing endpoint 'StarWars.Controllers.SWController.Get (StarWars)'
+2019-07-27 13:29:36.059 +02:00 [INF] Route matched with {action = "Get", controller = "SW"}. Executing action StarWars.Controllers.SWController.Get (StarWars)
+2019-07-27 13:29:36.060 +02:00 [INF] Executing action method StarWars.Controllers.SWController.Get (StarWars) with arguments (["2"]) - Validation state: "Valid"
+2019-07-27 13:29:36.671 +02:00 [INF] Executed action method StarWars.Controllers.SWController.Get (StarWars), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 611.1136ms.
+2019-07-27 13:29:36.672 +02:00 [INF] Executing ObjectResult, writing value of type 'StarWars.Models.Character'.
+2019-07-27 13:29:36.673 +02:00 [INF] Executed action StarWars.Controllers.SWController.Get (StarWars) in 613.855ms
+2019-07-27 13:29:36.673 +02:00 [INF] Executed endpoint 'StarWars.Controllers.SWController.Get (StarWars)'
+2019-07-27 13:29:36.673 +02:00 [INF] Request finished in 620.2577ms 200 application/xml; charset=utf-8
+2019-07-27 13:29:43.408 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/sw/3  
+2019-07-27 13:29:43.408 +02:00 [INF] Executing endpoint 'StarWars.Controllers.SWController.Get (StarWars)'
+2019-07-27 13:29:43.408 +02:00 [INF] Route matched with {action = "Get", controller = "SW"}. Executing action StarWars.Controllers.SWController.Get (StarWars)
+2019-07-27 13:29:43.409 +02:00 [INF] Executing action method StarWars.Controllers.SWController.Get (StarWars) with arguments (["3"]) - Validation state: "Valid"
+2019-07-27 13:29:43.935 +02:00 [INF] Executed action method StarWars.Controllers.SWController.Get (StarWars), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 525.7614ms.
+2019-07-27 13:29:43.935 +02:00 [INF] Executing ObjectResult, writing value of type 'StarWars.Models.Character'.
+2019-07-27 13:29:43.935 +02:00 [INF] Executed action StarWars.Controllers.SWController.Get (StarWars) in 526.91100000000006ms
+2019-07-27 13:29:43.936 +02:00 [INF] Executed endpoint 'StarWars.Controllers.SWController.Get (StarWars)'
+2019-07-27 13:29:43.936 +02:00 [INF] Request finished in 527.5134ms 200 application/xml; charset=utf-8
