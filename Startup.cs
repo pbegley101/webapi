@@ -18,6 +18,7 @@ using StarWars.Models;
 using Microsoft.Extensions.Http;
 using RestEase;
 using StarWars.Proxies;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace StarWars
 {
@@ -75,7 +76,13 @@ namespace StarWars
                return await Task.FromResult(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
            });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options =>
+            {
+                options.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+                options.RespectBrowserAcceptHeader = true; // false by default
+
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                       
 
 
 
