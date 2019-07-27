@@ -11,6 +11,7 @@ using Polly;
 using Polly.Retry;
 using Polly.Timeout;
 using RestEase;
+using Serilog;
 using StarWars.Models;
 using StarWars.Proxies;
 
@@ -29,7 +30,9 @@ namespace StarWars.Controllers
         private readonly ISWApi characterClient;
         private readonly IOptionsSnapshot<CharacterAPIOptions> characterOptions;
 
-        public SWController(ISWApi client,IOptionsSnapshot<CharacterAPIOptions> characterOptions)
+
+        public SWController(ISWApi client,
+                            IOptionsSnapshot<CharacterAPIOptions> characterOptions)
         {
 
             this.characterClient = client;
@@ -43,9 +46,9 @@ namespace StarWars.Controllers
         [ProducesResponseType(400)]
         public ActionResult<Character> Get(int id)
         {
-       
 
 
+            Log.Debug("-------------------------------------------------");
 
             Character result = null;
 
