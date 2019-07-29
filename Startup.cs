@@ -25,6 +25,8 @@ namespace StarWars
     public class Startup
     {
         private IPolicyRegistry<string> policyRegistry;
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
@@ -75,6 +77,18 @@ namespace StarWars
                }
                return await Task.FromResult(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckResult.Healthy());
            });
+
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000"
+                                        ).AllowAnyHeader()
+                                .AllowAnyMethod(); 
+                });
+            });
 
             services.AddMvc(options =>
             {
@@ -159,6 +173,9 @@ namespace StarWars
 
             app.UseOpenApi();
             app.UseSwaggerUi3();
+
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseHealthChecks("/healthcheck");
             app.UseHttpsRedirection();

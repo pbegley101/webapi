@@ -1,29 +1,25 @@
 ﻿<Properties StartupConfiguration="{0F724191-FD66-462D-9876-B02811FC06F5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.Development.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="README.txt">
     <Files>
-      <File FileName="Startup.cs" Line="83" Column="1" />
-      <File FileName="Controllers/SWController.cs" Line="54" Column="19" />
+      <File FileName="Startup.cs" Line="64" Column="21" />
+      <File FileName="Controllers/SWController.cs" Line="47" Column="15" />
       <File FileName="Models/Character.cs" Line="15" Column="34" />
       <File FileName="Proxies/ICharacterClient.cs" Line="17" Column="28" />
       <File FileName="appsettings.json" Line="13" Column="4" />
-      <File FileName="Program.cs" Line="23" Column="6" />
-      <File FileName="appsettings.Development.json" Line="13" Column="4" />
+      <File FileName="Program.cs" Line="60" Column="70" />
+      <File FileName="appsettings.Development.json" Line="17" Column="27" />
+      <File FileName="log20190727.txt" Line="1" Column="1" />
+      <File FileName="README.txt" Line="1" Column="9" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StarWars" expanded="True">
             <Node name="StarWars" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True">
-                  <Node name="Microsoft.Extensions.Http" expanded="True" />
-                </Node>
-                <Node name="SdkDependencies" expanded="True" />
-              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Proxies" expanded="True" />
-              <Node name="appsettings.Development.json" selected="True" />
+              <Node name="README.txt" selected="True" />
             </Node>
           </Node>
         </State>

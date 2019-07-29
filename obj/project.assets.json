@@ -12854,11 +12854,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/paulbegley/interview/StarWars/StarWars.csproj",
+      "projectUniqueName": "/Users/paulbegley/sample/StarWars/StarWars.csproj",
       "projectName": "StarWars",
-      "projectPath": "/Users/paulbegley/interview/StarWars/StarWars.csproj",
+      "projectPath": "/Users/paulbegley/sample/StarWars/StarWars.csproj",
       "packagesPath": "/Users/paulbegley/.nuget/packages/",
-      "outputPath": "/Users/paulbegley/interview/StarWars/obj/",
+      "outputPath": "/Users/paulbegley/sample/StarWars/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
